@@ -16,13 +16,13 @@ function UploadList() {
   }, []);
 
   return (
-    <div className="container">
-      <table> 
+    <div className="flex container col-span-2 py-10 mx-auto my-0 text-white font-semibold text-l ">
+      <table className="my-0 mx-auto w-5/6 border-collapse border border-slate-500"> 
         <thead>
-          <tr>
-            <th>Fecha</th>
-            <th>Nombre archivo</th>
-            <th>% procesado</th>
+          <tr className="bg-indigo-900">
+            <th className="border border-slate-600">Fecha</th>
+            <th className="border border-slate-600">Nombre archivo</th>
+            <th className="border border-slate-600">% procesado</th>
           </tr>
         </thead>
         <tbody>

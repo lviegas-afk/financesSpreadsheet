@@ -1,12 +1,40 @@
-import { UploadContextProvider } from "../context/UploadContext";
-import Upload from './upload/Upload'
+import Sidebar from "./sidebar/Sidebar";
+import Navbar from "./navbar/Navbar";
+import { Routes, Route } from 'react-router-dom';
+import Home from './Home';
+import MainUpload from './upload/MainUpload';
+import Chart from './Chart';
+import Exchange from './Exchange';
+import Docviewer from './DocViewer';
+import { Cookies } from 'react-cookie';
+import Login from './login/Login'
 
 function App() {
+
+  // set up cookies
+  const cookies = new Cookies();  
+  const token = cookies.get("user-token");
+
+  
+  if(token == undefined){
+    return(
+      <Login/>
+    );
+  }
+
   return (
     <>
-      <UploadContextProvider>
-        <Upload />
-      </UploadContextProvider>
+      <Navbar />
+      <div className="flex flex-row">
+      <Sidebar />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/upload" element={<MainUpload />} />
+        <Route exact path="/chart" element={<Chart />} />
+        <Route exact path="/verduleria" element={<Exchange />} />
+        <Route exact path="/google-doc" element={<Docviewer />} />
+      </Routes>
+      </div>
     </>
   );
 }

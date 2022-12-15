@@ -4,7 +4,7 @@ import UploadList from "./UploadList";
 
 function Upload() {
   return (
-    <div className='container mx-auto'>
+    <div className='containter flex flex-col w-full p-10 grid grid-cols-3 gap-4 overflow-hidden'>
       <UploadFile/>  
       <UploadList/>  
     </div>
