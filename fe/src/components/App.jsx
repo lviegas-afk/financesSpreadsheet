@@ -5,7 +5,6 @@ import Home from './Home';
 import MainUpload from './upload/MainUpload';
 import Chart from './Chart';
 import Exchange from './Exchange';
-import Docviewer from './DocViewer';
 import { Cookies } from 'react-cookie';
 import Login from './login/Login'
 
@@ -32,7 +31,6 @@ function App() {
         <Route exact path="/upload" element={<MainUpload />} />
         <Route exact path="/chart" element={<Chart />} />
         <Route exact path="/verduleria" element={<Exchange />} />
-        <Route exact path="/google-doc" element={<Docviewer />} />
       </Routes>
       </div>
     </>
